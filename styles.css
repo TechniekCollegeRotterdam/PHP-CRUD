@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+   
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('images/php-crud-pdo.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3; /* Pas deze waarde aan voor de gewenste transparantie */
+    z-index: -1; /* Zorgt ervoor dat de afbeelding achter de content blijft */
+    pointer-events: none; /* Zorgt ervoor dat de afbeelding niet aanklikbaar is */
+  }
+
+main {
+    color: white;
+    width: 90%;
+    margin: 5vh auto;
+}
+
+main p {
+    margin: 3vh 0;
+    color: black;
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+    margin: 0 20px;
+}
+
+.nav-flex01 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+.main-item ul li {
+    position: relative;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  li {
+    position: relative;
+  }
+  
+.nav-flex01 a {
+    color: #dfd9e2;
+    text-decoration: none;
+  }
+
+  main section {
+    color: black;    
+  }
+
+  main p {
+    color: black;
+    font-weight: normal;
+  }
+
+  main p h3 {
+    color: black;
+    font-weight: bolder;
+  }
+
+  embed {
+    width: 70vw;
+    min-height: 100vh;
+    border: none;
+  }
+  
+  .main-item {
+    width: 150px;
+    min-height: 30px;
+    background-color: rgb(1, 66, 1);
+    text-align: center;
+    line-height: 30px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .main-item li a:hover {
+    color: #30d5c8;
+  }
+  
+  .main-menu {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    color: #dfd9e2;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  li:hover a {
+    color: yellow;
+  }
+  
+  li:hover > ul {
+    display: block;
+  }
+  
+  ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(1, 66, 1);
+    width: 150px;
+    padding: 5px;
+    margin: 0 auto;
+  }
+  
+  ul ul ul {
+    left: 100%;
+    top: 0;
+  }
+  
+  li.frstlvl > a {
+    font-weight: bold;
+  }
+  
+  li.scndlvl > a {
+    font-weight: normal;
+  }
+  
+  .thrdlvl > a {
+    font-weight: normal;
+  }
+  
+  .centering {
+    width: 80vw;
+    margin: 2px auto;
+  }
+
+.introduce {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
+
+.introduce section {
+    min-width: 30vw;
+}
+
+.introduce section img {
+    max-width: 40vw;
+    /* min-width: 30vw; */
+    max-height: 70vh;
+    margin: auto;
+}
+
+.splitspace {
+    display: flex;
+    justify-content: space-around;
+    color: black;
+}
+
+.splitspace section {
+    max-width: 35vw;
+}
+
+.splitspace section img {
+    max-width: 35vw;
+}
+
+.verticalspace {
+    margin: 3vh 0;
+}
+
+.blacktext {
+  color: black;
+  width: 80vw;
+  margin: 2px auto;
+}
+
+.portfolio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portf-disp {
+  width: 40vw;
+  height: 60vh;
+  background-color: darkgreen;
+  padding: 12px;
+}
+
+.portf-disp img {
+  /*height: 60px;*/
+  width: 40vw;
+}
+
+.portf-buttons {
+  width: 40vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portf-buttons button {
+  width: 20vw;
+  height: 7vh;
+  background-color: darkgreen;
+  color: goldenrod;
+}
+
+.tabledisp {
+  width: 60vw;
+  margin: 20px auto;
+  text-align: center;
+}
+
+table, thead, th, tbody, tr, td {
+  border-width: 2px;
+  border-color: black;
+}
+
+tbody {
+  color: black;
+}
+
+.darkgrey {
+  background-color: darkgrey;
+}
+
+.lightgrey {
+  background-color: lightgrey;
+}
+
+.topofpage {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageheader {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: darkgreen;
+}
+
+.pageheader img {
+  width: 10vw;
+}
+
+.headercountry {
+  display: flex;
+  align-items: center;
+}
+
+.navheader {
+  width: 95vw;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+}

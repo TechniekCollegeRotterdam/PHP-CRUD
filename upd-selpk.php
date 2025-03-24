@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Toon Leveranciers</title>
+</head>
+
+<body>
+    <form action='upd-checkpk.php' method='POST'>
+        <input type="number" name="suppl-pk">
+        <input type="text" disabled name="" value="">
+        <input type="submit" value="Wijzig" name="submt-sel-supp">
+    </form>
+	<?php
+	require_once "dbconnect.php";
+	try {
+		$sQuery = "SELECT * FROM supplier";
+		$oStmt = $db->prepare($sQuery);
+		$oStmt->execute();
+
+		if ($oStmt->rowCount() > 0) {
+			echo '<table>';
+			echo '<thead>';
+			echo '<td>Lev.nr.</td>';
+			echo '<td>Lev.naam</td>';
+			echo '<td>Adres</td>';
+			echo '<td>Woonplaats</td>';
+			echo '<td>Website</td>';
+            echo '<td>Actieknop</td>';
+			echo '</thead>';
+			while ($aRow = $oStmt->fetch(PDO::FETCH_ASSOC)) {
+				echo '<tr><form action="upd-checkpk.php" method="POST">';
+				echo '<td><input type="number" disabled name="sel-supp-pk" value="' . $aRow['id'] . '"></td>';
+				echo '<td>' . $aRow['company'] . '</td>';
+				echo '<td>' . $aRow['streetaddress'] . '</td>';
+				echo '<td>' . $aRow['city'] . '</td>';
+				echo '<td>' . $aRow['domain'] . '</td>';
+				echo '<td><input type="submit" value="Wijzig" name="submt-sel-supp"></td>';
+				echo '</form></tr>';
+			}
+			echo '</table>';
+		} else {
+			echo 'Helaas, geen gegevens bekend';
+		}
+	} catch (PDOException $e) {
+		$sMsg = '<p> 
+					Regelnummer: ' . $e->getLine() . '<br /> 
+					Bestand: ' . $e->getFile() . '<br /> 
+					Foutmelding: ' . $e->getMessage() . ' 
+				</p>';
+
+		trigger_error($sMsg);
+	}
+	$db = null;
+	?>
+
+
+</body>
+</html>

@@ -4,17 +4,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
 	<title>Toon Leveranciers</title>
 </head>
 
 <body>
-    <form action='upd-checkpk.php' method='POST'>
-        <input type="number" name="suppl-pk">
-        <input type="text" disabled name="" value="">
-        <input type="submit" value="Wijzig" name="submt-sel-supp">
-    </form>
 	<?php
 	require_once "dbconnect.php";
+	include "header.php";
 	try {
 		$sQuery = "SELECT * FROM supplier";
 		$oStmt = $db->prepare($sQuery);
@@ -31,7 +28,7 @@
             echo '<td>Actieknop</td>';
 			echo '</thead>';
 			while ($aRow = $oStmt->fetch(PDO::FETCH_ASSOC)) {
-				echo '<tr><form action="upd-checkpk.php" method="POST">';
+				echo '<tr><form action="upd_checkpk.php" method="POST">';
 				echo '<td><input type="number" disabled name="sel-supp-pk" value="' . $aRow['id'] . '"></td>';
 				echo '<td>' . $aRow['company'] . '</td>';
 				echo '<td>' . $aRow['streetaddress'] . '</td>';

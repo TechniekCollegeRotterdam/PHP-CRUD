@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +10,23 @@
     <?php
         // controleren of de gebruiker afkomt van het vorige scherm
         // Dat weet je doordat hij dan daar de submit knop heeft ingedrukt
-        if (!isset($_POST["submitbtnsuppl"]))
+        if (!isset($_POST["submitbtnsuppl"]) && !isset($_POST["submt-sel-supp"]))
         {
             header("Refresh: 4, url=upd-getpk.php");
             echo "<h2>Je bent hier niet op de juiste manier gekomen!</h2>";
             exit();
         }
 
-        // Formulierveld ophalen naar een variabele en gelijk opschonen
-        $supp_pk = test_input($_POST["supp_pk"]);
+        // Formulierveld ophalen naar een variabele en gelijk opschonen bij invoer lev.nr
+        if (isset($_POST["submitbtnsuppl"]))
+        {
+            $supp_pk = test_input($_POST["supp_pk"]);
+            $return_prog = "upd-getpk.php";
+        } else
+        {
+            $supp_pk = test_input($_POST["sel-supp-pk"]);
+            $return_prog = "upd-selpk.php";
+        }
         if (!is_numeric($supp_pk))
         {
             header("Refresh: 4, url=upd-getpk.php");
@@ -114,9 +122,10 @@
             </fieldset>
     <!-- Een "reset" knop (leeg maken van het formulier) heeft hieronder geen zin. Dan zijn alle gegevens
          van de leverancier verdwenen. Het is daarom beter om terug te keren naar het eerste formulier. daar
-         kan de gebruiker de gegevens opnieuw opvragen. -->
+         kan de gebruiker de gegevens opnieuw opvragen. 
+         Bij het openen van het programma is het aanleverende programma vastgelegd in variabele $return_prog -->
             <fieldset>
-                <button type="submit" formaction="upd-getpk.php">Breek af</button>
+                <button type="submit" formaction="<?php echo $return_prog; ?>">Breek af</button>
                 <input type="submit" value="Verwerk" name="supp_applychanges">
             </fieldset>
         </form>

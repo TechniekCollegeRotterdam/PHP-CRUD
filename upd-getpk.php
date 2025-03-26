@@ -10,7 +10,8 @@
     <?php
         include "header.php";
     ?>
-    <form action="upd_checkpk.php" method="post">
+    <h2 class="centering">Welke leverancier wilt u wijzigen?</h2>
+    <form action="upd_checkpk.php" method="post" class="tabledisp">
         <label for="supp_pk">Leveranciersnummer : </label>
         <input type="number" name="supp_pk" required>
         <input type="reset" value="Maak leeg">

@@ -195,6 +195,8 @@
             $inpData = htmlspecialchars($inpData);
             return $inpData;
         }
+
+        // check_alfanum controleert of de input alleen uit letters, cijfers of spaties bestaat
         function check_alfanum($inpData)
         {
             if (preg_match("/^[a-zA-Z0-9-' ]*$/",$inpData)) 
@@ -207,6 +209,7 @@
             }
         }
 
+        // check_alfabet controleert of de input alleen uit letters en spaties bestaat.
         function check_alfabet($inpData)
         {
             if (preg_match("/^[a-zA-Z-' ]*$/",$inpData)) 

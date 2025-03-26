@@ -85,38 +85,39 @@
            de aanhalingstekens zou van een bedrijfsnaam 'Monster Transport' alleen het 'Monster' te zien zijn.
         */
    ?>
-        <form action="update_supplier.php" method="post">
+        <h2 class="centering">Wijzigen leverancier</h2>
+        <form action="update_supplier.php" method="post" class="tabledisp">
             <input type="hidden" name="supp_pk" value="<?php echo $supp_pk; ?>" >
 
-            <fieldset>
+            <fieldset class="tbodyflex">
                 <label for="supp_company">Naam leverancier : </label>
                 <input type="text" name="supp_company" required value="<?php echo $dataSupplier["company"]; ?>" >
             </fieldset>
-            <fieldset>
+            <fieldset class="tbodyflex">
                 <label for="supp_streetaddress">Adres leverancier : </label>
                 <input type="text" name="supp_streetaddress" value="<?php echo $dataSupplier["streetaddress"]; ?>" >
             </fieldset>
-            <fieldset>
+            <fieldset class="tbodyflex">
                 <label for="supp_zipcode">Postcode : </label>
                 <input type="text" name="supp_zipcode" value="<?php echo $dataSupplier["zipcode"]; ?>" >
             </fieldset>
-            <fieldset>
+            <fieldset class="tbodyflex">
                 <label for="supp_city">Vestigingsplaats : </label>
                 <input type="text" name="supp_city" required value="<?php echo $dataSupplier["city"]; ?>" >
             </fieldset>
-            <fieldset>
+            <fieldset class="tbodyflex">
                 <label for="supp_country">Land : </label>
                 <input type="text" name="supp_country" required value="<?php echo $dataSupplier["country"]; ?>" >
             </fieldset>
-            <fieldset>
+            <fieldset class="tbodyflex">
                 <label for="supp_email">Email adres : </label>
                 <input type="email" name="supp_email" value="<?php echo $dataSupplier["emailaddress"]; ?>" >
             </fieldset>
-            <fieldset>
+            <fieldset class="tbodyflex">
                 <label for="supp_domain">Domeinnaam : </label>
                 <input type="text" name="supp_domain" value="<?php echo $dataSupplier["domain"]; ?>" >
             </fieldset>
-            <fieldset>
+            <fieldset class="tbodyflex">
                 <label for="supp_telephone">Telefoonnummer : </label>
                 <input type="text" name="supp_telephone" value="<?php echo $dataSupplier["telephonenumber"]; ?>" >
             </fieldset>

@@ -84,6 +84,7 @@
         }
 
         // Controleer of het aangegeven land voorkomt in de tabel country
+        require_once "dbconnect.php";
         try
         {
             $sQuery = "SELECT * FROM country WHERE idcountry = :cntry";
@@ -169,7 +170,9 @@
         {
             header("Refresh: 6, url=index.php");
             include "header.php";
+            echo "<pre>";
             print_r($errorMsg);
+            echo "</pre>";
             echo "<br><h2>Je keert nu terug naar de thuispagina</h2>";
         }
     ?>

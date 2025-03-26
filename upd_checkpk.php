@@ -110,7 +110,7 @@
             </fieldset>
             <fieldset>
                 <label for="supp_email">Email adres : </label>
-                <input type="text" name="supp_email" value="<?php echo $dataSupplier["emailaddress"]; ?>" >
+                <input type="email" name="supp_email" value="<?php echo $dataSupplier["emailaddress"]; ?>" >
             </fieldset>
             <fieldset>
                 <label for="supp_domain">Domeinnaam : </label>

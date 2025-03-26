@@ -35,7 +35,7 @@
             </fieldset>
             <fieldset class="tbodyflex">
                 <label for="supp_email">Email adres : </label>
-                <input type="text" name="supp_email" >
+                <input type="email" name="supp_email" >
             </fieldset>
             <fieldset class="tbodyflex">
                 <label for="supp_domain">Domeinnaam : </label>

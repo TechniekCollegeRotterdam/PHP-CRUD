@@ -17,8 +17,9 @@
 		$oStmt = $db->prepare($sQuery);
 		$oStmt->execute();
 
+		echo "<h2 class='centering'>Overzicht leveranciers</h2>";
 		if ($oStmt->rowCount() > 0) {
-			echo '<table>';
+			echo '<table class="tabledisp2">';
 			echo '<thead>';
 			echo '<td>Lev.nr.</td>';
 			echo '<td>Lev.naam</td>';
@@ -29,7 +30,7 @@
 			echo '</thead>';
 			while ($aRow = $oStmt->fetch(PDO::FETCH_ASSOC)) {
 				echo '<tr><form action="upd_checkpk.php" method="POST">';
-				echo '<td><input type="number" disabled name="sel-supp-pk" value="' . $aRow['id'] . '"></td>';
+				echo '<td><input type="number" readonly name="sel-supp-pk" value="' . $aRow['id'] . '"></td>';
 				echo '<td>' . $aRow['company'] . '</td>';
 				echo '<td>' . $aRow['streetaddress'] . '</td>';
 				echo '<td>' . $aRow['city'] . '</td>';

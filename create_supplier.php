@@ -134,7 +134,7 @@
             try
             {
                 $sQuery = "INSERT INTO `supplier`(`company`, `streetaddress`, 
-                                                  `zipcode`, `city`, `country`, 
+                                                  `zipcode`, `city`, `idcountry`, 
                                                   `emailaddress`, `domain`, `telephonenumber`) 
                                     VALUES (:scomp,:saddr,:szip,:scity,:scntry,:seml,:sdom,:stel)";
                 $oStmt = $db->prepare($sQuery);

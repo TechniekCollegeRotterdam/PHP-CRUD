@@ -31,7 +31,7 @@
             </fieldset>
             <fieldset class="tbodyflex">
                 <label for="supp_country">Land : </label>
-                <input type="text" name="supp_country" required >
+                <input type="number" name="supp_country" required >
             </fieldset>
             <fieldset class="tbodyflex">
                 <label for="supp_email">Email adres : </label>

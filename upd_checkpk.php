@@ -107,7 +107,7 @@
             </fieldset>
             <fieldset class="tbodyflex">
                 <label for="supp_country">Land : </label>
-                <input type="text" name="supp_country" required value="<?php echo $dataSupplier["country"]; ?>" >
+                <input type="number" name="supp_country" required value="<?php echo $dataSupplier["idcountry"]; ?>" >
             </fieldset>
             <fieldset class="tbodyflex">
                 <label for="supp_email">Email adres : </label>

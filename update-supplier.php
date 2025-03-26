@@ -138,7 +138,7 @@
                                                  `streetaddress`=:saddr,
                                                  `zipcode`=:szip,
                                                  `city`=:scity,
-                                                 `country`=:scntry,
+                                                 `idcountry`=:scntry,
                                                  `emailaddress`=:seml,
                                                  `domain`=:sdom,
                                                  `telephonenumber`=:stel 

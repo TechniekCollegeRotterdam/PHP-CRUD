@@ -10,9 +10,9 @@
     <?php
         // controleren of de gebruiker afkomt van het vorige scherm
         // Dat weet je doordat hij dan daar de submit knop heeft ingedrukt
-        if (!isset($_POST["supp_applychanges"]))
+        if (!isset($_POST["crea_nw_suppl"]))
         {
-            header("Refresh: 4, url=upd-getpk.php");
+            header("Refresh: 2, url=crea-form.php");
             echo "<h2>Je bent hier niet op de juiste manier gekomen!</h2>";
             exit();
         }
@@ -20,8 +20,6 @@
         /* De eerste stap is nu het binnenhalen en opschonen van alle velden van het formulier. Hiervoor gebruik
            de functie 'test-input' die je aan het einde van de <body> toevoegt.
         */
-        $supp_pk = $_POST["supp_pk"]; // Dit is niet te wijzigen door de gebruiker, kan rechtstreeks overnemen
-
         $supp_company = test_input(($_POST["supp_company"]));
         $supp_streetaddress = test_input(($_POST["supp_streetaddress"]));
         $supp_zipcode = test_input(($_POST["supp_zipcode"]));
@@ -134,17 +132,11 @@
         {
             try
             {
-                $sQuery = "UPDATE `supplier` SET `company`=:scomp,
-                                                 `streetaddress`=:saddr,
-                                                 `zipcode`=:szip,
-                                                 `city`=:scity,
-                                                 `country`=:scntry,
-                                                 `emailaddress`=:seml,
-                                                 `domain`=:sdom,
-                                                 `telephonenumber`=:stel 
-                                    WHERE `id` = :spk";
+                $sQuery = "INSERT INTO `supplier`(`company`, `streetaddress`, 
+                                                  `zipcode`, `city`, `country`, 
+                                                  `emailaddress`, `domain`, `telephonenumber`) 
+                                    VALUES (:scomp,:saddr,:szip,:scity,:scntry,:seml,:sdom,:stel)";
                 $oStmt = $db->prepare($sQuery);
-                $oStmt->bindValue(":spk", $supp_pk);
                 $oStmt->bindValue(":scomp", $supp_company);
                 $oStmt->bindValue(":saddr", $supp_streetaddress);
                 $oStmt->bindValue(":szip", $supp_zipcode);
@@ -170,7 +162,7 @@
             }
             header("Refresh: 2, url=index.php");
             include "header.php";
-            echo "<br><h2>Gegevens gewijzigd</h2><br>";
+            echo "<br><h2>Nieuwe leverancier toegevoegd</h2><br>";
             echo "<h2>Je keert nu terug naar de thuispagina</h2><br>";
         }
         else

@@ -145,7 +145,8 @@ header {
   
   .centering {
     width: 80vw;
-    margin: 2px auto;
+    margin: 20px auto;
+    text-align: center;
   }
 
 .introduce {
@@ -223,8 +224,14 @@ header {
 }
 
 .tabledisp {
-  width: 60vw;
-  margin: 20px auto;
+  width: 30vw;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.tabledisp2 {
+  width: 70vw;
+  margin: 30px auto;
   text-align: center;
 }
 
@@ -233,8 +240,18 @@ table, thead, th, tbody, tr, td {
   border-color: black;
 }
 
+thead {
+  font-weight: bold;
+}
+
 tbody {
   color: black;
+  text-align: left;
+}
+
+.tbodyflex {
+  display: flex;
+  justify-content:space-around;
 }
 
 .darkgrey {
@@ -272,4 +289,9 @@ tbody {
   height: 5vh;
   display: flex;
   justify-content: space-between;
+}
+
+.formplace {
+  width: 70vw;
+  margin: 5vh auto;
 }

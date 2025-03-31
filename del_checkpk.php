@@ -10,7 +10,7 @@
     <?php
         // controleren of de gebruiker afkomt van het vorige scherm
         // Dat weet je doordat hij dan daar de submit knop heeft ingedrukt
-        if (!isset($_POST["submitdelsuppl"]) && !isset($_POST["submt-upd-del-supp"]))
+        if (!isset($_POST["submitdelsuppl"]) && !isset($_POST["submt-del-supp"]))
         {
             header("Refresh: 4, url=upd-getpk.php");
             echo "<h2>Je bent hier niet op de juiste manier gekomen!</h2>";

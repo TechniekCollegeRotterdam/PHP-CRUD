@@ -86,7 +86,7 @@
         */
    ?>
         <h2 class="centering">Wijzigen leverancier</h2>
-        <form action="update_supplier.php" method="post" class="tabledisp">
+        <form action="update-supplier.php" method="post" class="tabledisp">
             <input type="hidden" name="supp_pk" value="<?php echo $supp_pk; ?>" >
 
             <fieldset class="tbodyflex">

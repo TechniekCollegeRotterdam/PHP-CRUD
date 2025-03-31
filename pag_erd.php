@@ -13,7 +13,7 @@
 	include "header.php";
 	echo "<h2 class='centering'>Entity Relationship Diagram</h2>";
 	?>
-    <p><img src="images/php-crud-erd.jpg" alt="Overzicht van database" class="full-size-img"></p>
+    <p class="centering"><img src="images/php-crud-erd.jpg" alt="Overzicht van database"></p>
 
 </body>
 </html>

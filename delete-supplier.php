@@ -22,6 +22,11 @@
         */
         $supp_pk = $_POST["supp_pk"]; // Dit is niet te wijzigen door de gebruiker, kan rechtstreeks overnemen
 
+        /*
+            Vervolgens maak je verbinding met de database
+        */
+        require_once "dbconnect.php";
+
         try
         {
             $sQuery = "DELETE FROM `supplier` WHERE `id` = :spk";

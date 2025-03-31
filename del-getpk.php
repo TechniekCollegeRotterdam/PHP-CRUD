@@ -11,7 +11,7 @@
         include "header.php";
     ?>
     <h2 class="centering">Welke leverancier wilt u verwijderen?</h2>
-    <form action="upd_checkpk.php" method="post" class="tabledisp">
+    <form action="del_checkpk.php" method="post" class="tabledisp">
         <label for="supp_pk">Leveranciersnummer : </label>
         <input type="number" name="supp_pk" required>
         <input type="reset" value="Maak leeg">

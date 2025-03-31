@@ -25,7 +25,7 @@
         } else
         {
             $supp_pk = test_input($_POST["sel-supp-pk"]);
-            $return_prog = "upd-del-selpk.php";
+            $return_prog = "del-upd-selpk.php";
         }
         if (!is_numeric($supp_pk))
         {
@@ -88,8 +88,8 @@
            velden zijn daarom readonly.
         */
    ?>
-        <h2 class="centering">Wijzigen leverancier</h2>
-        <form action="update_supplier.php" method="post" class="tabledisp">
+        <h2 class="centering">Verwijderen leverancier</h2>
+        <form action="delete-supplier.php" method="post" class="tabledisp">
             <input type="hidden" name="supp_pk" value="<?php echo $supp_pk; ?>" >
 
             <fieldset class="tbodyflex">
@@ -130,7 +130,7 @@
          Bij het openen van het programma is het aanleverende programma vastgelegd in variabele $return_prog -->
             <fieldset>
                 <button type="submit" formaction="<?php echo $return_prog; ?>">Breek af</button>
-                <input type="submit" value="Verwerk" name="supp_deletebtn">
+                <input type="submit" value="Verwijder" name="supp_deletebtn">
             </fieldset>
         </form>
 

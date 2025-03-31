@@ -26,7 +26,7 @@
 			echo '<td>Adres</td>';
 			echo '<td>Woonplaats</td>';
 			echo '<td>Website</td>';
-            echo '<td>Actieknop</td>';
+            echo '<td> Actieknoppen </td>';
 			echo '</thead>';
 			while ($aRow = $oStmt->fetch(PDO::FETCH_ASSOC)) {
 				echo '<tr><form action="upd_checkpk.php" method="POST">';
@@ -35,8 +35,9 @@
 				echo '<td>' . $aRow['streetaddress'] . '</td>';
 				echo '<td>' . $aRow['city'] . '</td>';
 				echo '<td>' . $aRow['domain'] . '</td>';
-				echo '<td><input type="submit" value="Wijzig" name="submt-sel-supp">';
-				echo '<button type="submit" formaction="del_checkpk.php">Verwijder</button></td>';
+				echo '<td><input type="submit" value="Wijzig" name="submt-sel-supp"> ';
+				echo '<button type="submit" formaction="del_checkpk.php" name="submt-del-supp">Verwijder
+                     </button></td>';
 				echo '</form></tr>';
 			}
 			echo '</table>';
